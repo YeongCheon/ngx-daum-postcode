@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-daum-postcode": [
+        "dist/ngx-daum-postcode/ngx-daum-postcode",
+        "dist/ngx-daum-postcode"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
