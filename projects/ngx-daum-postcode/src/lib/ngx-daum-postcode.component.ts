@@ -46,6 +46,8 @@ export class NgxDaumPostcodeComponent implements OnInit {
 
   private initDaumPostcode() {
     new daum.Postcode({
+      width: '100%',
+      height: '100%',
       oncomplete: (data: DaumPostcode) => {
         this.onComplete.emit(data);
       },
