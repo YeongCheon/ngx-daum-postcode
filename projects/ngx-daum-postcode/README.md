@@ -1,24 +1,70 @@
 # NgxDaumPostcode
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+카카오에서 제공하는 [우편번호 서비스](https://postcode.map.daum.net/guide)를 Angular 환경에서 편하게 사용하기 위해 감싼 WrapperComponent를 제공하는 비공식 라이브러리입니다.
 
-## Code scaffolding
+## 사용법
 
-Run `ng generate component component-name --project ngx-daum-postcode` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-daum-postcode`.
-> Note: Don't forget to add `--project ngx-daum-postcode` or else it will be added to the default project in your `angular.json` file. 
+### npm install
 
-## Build
+``` bash
+npm i ngx-daum-postcode
+```
 
-Run `ng build ngx-daum-postcode` to build the project. The build artifacts will be stored in the `dist/` directory.
+### app.module.ts
 
-## Publishing
+``` typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgxDaumPostcodeModule } from 'projects/ngx-daum-postcode/src/public-api';
 
-After building your library with `ng build ngx-daum-postcode`, go to the dist folder `cd dist/ngx-daum-postcode` and run `npm publish`.
+import { AppComponent } from './app.component';
 
-## Running unit tests
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, NgxDaumPostcodeModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule { }
+```
 
-Run `ng test ngx-daum-postcode` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### app.component.html
+``` html
+<ngx-daum-postcode
+  (onComplete)="onComplete($event)"
+  (onSearch)="onSearch($event)"
+  (onResize)="onResize($event)"
+></ngx-daum-postcode>
+```
 
-## Further help
+### app.component.ts
+``` typescript
+import { Component } from '@angular/core';
+import {
+  DaumPostcode,
+  Search,
+  Size,
+} from 'ngx-daum-postcode';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {
+  title = 'ngxDaumPostcode Example';
+
+  onComplete(daumPostcode: DaumPostcode): void {
+    console.debug(daumPostcode);
+  }
+
+  onResize(size: Size): void {
+    console.debug(size);
+  }
+
+  onSearch(data: Search): void {
+    console.debug(data);
+  }
+}
+
+```
