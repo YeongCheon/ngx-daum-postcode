@@ -1,0 +1,19 @@
+name: npm-publish
+on:
+  create:
+    tags:
+      - v*
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - run: node ./node_modules/@angular/cli/bin/ng.js build --configuration production ngx-daum-postcode
+      - run: npm publish ./dist/ngx-daum-postcode
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
