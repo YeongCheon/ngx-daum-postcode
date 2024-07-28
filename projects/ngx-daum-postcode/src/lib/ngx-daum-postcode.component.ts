@@ -2,10 +2,9 @@ import { DOCUMENT } from '@angular/common';
 import {
   Component,
   ElementRef,
-  EventEmitter,
   Inject,
   OnInit,
-  Output,
+  output,
   Renderer2,
 } from '@angular/core';
 
@@ -17,20 +16,17 @@ declare let daum: any;
   styleUrls: ['./ngx-daum-postcode.component.scss'],
 })
 export class NgxDaumPostcodeComponent implements OnInit {
-  @Output('onComplete')
-  onComplete = new EventEmitter<DaumPostcode>();
+  onComplete = output<DaumPostcode>();
 
-  @Output('onResize')
-  onResize = new EventEmitter<Size>();
+  onResize = output<Size>();
 
-  @Output('onSearch')
-  onSearch = new EventEmitter<Search>();
+  onSearch = output<Search>();
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
-    private hostElement: ElementRef
-  ) { }
+    private hostElement: ElementRef,
+  ) {}
 
   ngOnInit(): void {
     const src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
