@@ -8,8 +8,8 @@ describe('NgxDaumPostcodeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxDaumPostcodeComponent ]
-    })
+    imports: [NgxDaumPostcodeComponent]
+})
     .compileComponents();
   });
 
