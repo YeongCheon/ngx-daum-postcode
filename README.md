@@ -10,24 +10,6 @@
 npm i ngx-daum-postcode
 ```
 
-### 모듈 추가
-
-``` typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgxDaumPostcodeModule } from 'projects/ngx-daum-postcode/src/public-api';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, NgxDaumPostcodeModule],
-  providers: [],
-  bootstrap: [AppComponent],
-})
-export class AppModule { }
-```
-
 ### app.component.html
 ``` html
 <ngx-daum-postcode
@@ -39,20 +21,22 @@ export class AppModule { }
 
 ### app.component.ts
 ``` typescript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 import {
   DaumPostcode,
-  Search,
+  NgxDaumPostcodeComponent,
   Size,
-} from 'ngx-daum-postcode';
+  Search,
+} from "projects/ngx-daum-postcode/src/public-api";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: "app-root",
+  imports: [NgxDaumPostcodeComponent],
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = 'ngxDaumPostcode Example';
+  title = "ngxDaumPostcode Example";
 
   onComplete(daumPostcode: DaumPostcode): void {
     console.debug(daumPostcode);
