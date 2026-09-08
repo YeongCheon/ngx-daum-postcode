@@ -1,20 +1,19 @@
-import { DOCUMENT } from "@angular/common";
 import {
   Component,
+  DOCUMENT,
   ElementRef,
-  Inject,
   OnInit,
-  output,
   Renderer2,
-} from "@angular/core";
+  inject,
+  output,
+} from '@angular/core';
 
 declare let daum: any;
 
 @Component({
-  selector: "ngx-daum-postcode",
-  templateUrl: "./ngx-daum-postcode.component.html",
-  styleUrls: ["./ngx-daum-postcode.component.scss"],
-  standalone: true,
+  selector: 'ngx-daum-postcode',
+  templateUrl: './ngx-daum-postcode.component.html',
+  styleUrls: ['./ngx-daum-postcode.component.scss'],
 })
 export class NgxDaumPostcodeComponent implements OnInit {
   onComplete = output<DaumPostcode>();
@@ -23,16 +22,14 @@ export class NgxDaumPostcodeComponent implements OnInit {
 
   onSearch = output<Search>();
 
-  constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2,
-    private hostElement: ElementRef,
-  ) {}
+  private document = inject(DOCUMENT);
+  private renderer = inject(Renderer2);
+  private hostElement = inject(ElementRef);
 
   ngOnInit(): void {
-    const src = "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js";
-    const scriptElement = this.renderer.createElement("script");
-    scriptElement.type = "text/javascript";
+    const src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
+    const scriptElement = this.renderer.createElement('script');
+    scriptElement.type = 'text/javascript';
     scriptElement.src = src;
     scriptElement.onload = () => {
       this.initDaumPostcode();
@@ -43,8 +40,8 @@ export class NgxDaumPostcodeComponent implements OnInit {
 
   private initDaumPostcode() {
     new daum.Postcode({
-      width: "100%",
-      height: "100%",
+      width: '100%',
+      height: '100%',
       oncomplete: (data: DaumPostcode) => {
         this.onComplete.emit(data);
       },

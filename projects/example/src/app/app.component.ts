@@ -1,19 +1,14 @@
-import { Component } from "@angular/core";
-import {
-  DaumPostcode,
-  NgxDaumPostcodeComponent,
-  Size,
-  Search,
-} from "projects/ngx-daum-postcode/src/public-api";
+import { Component } from '@angular/core';
+import { DaumPostcode, NgxDaumPostcodeComponent, Search, Size } from 'ngx-daum-postcode';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   imports: [NgxDaumPostcodeComponent],
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.css",
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = "ngxDaumPostcode Example";
+  title = 'ngxDaumPostcode Example';
 
   onComplete(daumPostcode: DaumPostcode): void {
     console.debug(daumPostcode);

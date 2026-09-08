@@ -1,39 +1,13 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript's language
+  server to improve development experience. It is not intended to be used to perform a compilation.
+*/
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "paths": {
-      "ngx-daum-postcode": [
-        "dist/ngx-daum-postcode/ngx-daum-postcode",
-        "dist/ngx-daum-postcode"
-      ]
-    },
-    "declaration": false,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
-    "useDefineForClassFields": false
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+  "files": [],
+  "references": [
+    { "path": "./projects/ngx-daum-postcode/tsconfig.lib.json" },
+    { "path": "./projects/ngx-daum-postcode/tsconfig.spec.json" },
+    { "path": "./projects/example/tsconfig.app.json" },
+    { "path": "./projects/example/tsconfig.spec.json" }
+  ]
 }

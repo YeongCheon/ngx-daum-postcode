@@ -1,9 +1,23 @@
 {
   "name": "ngx-daum-postcode",
-  "version": "19.0.0",
+  "version": "22.0.0",
+  "description": "Angular wrapper component for the Daum(Kakao) postcode service",
+  "keywords": [
+    "angular",
+    "postcode",
+    "daum",
+    "kakao",
+    "우편번호",
+    "한국",
+    "대한민국"
+  ],
+  "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^19",
-    "@angular/core": "^19"
+    "@angular/common": ">=22.0.0",
+    "@angular/core": ">=22.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
   },
   "author": {
     "name": "YeongCheon Kim",
@@ -14,11 +28,8 @@
     "type": "git",
     "url": "https://github.com/YeongCheon/ngx-daum-postcode"
   },
-  "keywords": [
-    "angular",
-    "postcode",
-    "우편번호",
-    "한국",
-    "대한민국"
-  ]
+  "homepage": "https://github.com/YeongCheon/ngx-daum-postcode#readme",
+  "bugs": {
+    "url": "https://github.com/YeongCheon/ngx-daum-postcode/issues"
+  }
 }
