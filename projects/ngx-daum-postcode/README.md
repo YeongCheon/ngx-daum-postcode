@@ -13,7 +13,7 @@ npm install ngx-daum-postcode
 
 | ngx-daum-postcode | Angular |
 |-------------------|---------|
-| 22.x              | >= 22   |
+| 22.x              | >= 21   |
 | 19.x              | 19      |
 | 18.x              | ^18.1   |
 | 17.x              | 17      |
