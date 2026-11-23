@@ -1,6 +1,6 @@
 {
   "name": "ngx-daum-postcode",
-  "version": "22.0.0",
+  "version": "22.0.1",
   "description": "Angular wrapper component for the Daum(Kakao) postcode service",
   "keywords": [
     "angular",

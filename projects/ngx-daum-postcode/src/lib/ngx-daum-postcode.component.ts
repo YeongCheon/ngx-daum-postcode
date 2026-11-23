@@ -27,7 +27,7 @@ export class NgxDaumPostcodeComponent implements OnInit {
   private hostElement = inject(ElementRef);
 
   ngOnInit(): void {
-    const src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
+    const src = '//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
     const scriptElement = this.renderer.createElement('script');
     scriptElement.type = 'text/javascript';
     scriptElement.src = src;
